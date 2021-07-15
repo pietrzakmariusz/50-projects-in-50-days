@@ -10,6 +10,11 @@ function checkBoxes() {
 
 		if (boxTop < triggerBottom) {
 			box.classList.add('box--show');
+		} else if (
+			document.documentElement.scrollHeight ==
+			window.innerHeight + window.scrollY
+		) {
+			box.classList.add('show');
 		} else {
 			box.classList.remove('box--show');
 		}
