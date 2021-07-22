@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	font-family: 'Lato', sans-serif;
+	background-color: #f0f0f0;
+}
+
+h1 {
+	margin: 5rem 0 3rem;
+	font-size: 3rem;
+	text-align: center;
+}
+
+.faq {
+	max-width: 70rem;
+	margin: 0 auto;
+}
+
+.faq__item {
+	position: relative;
+	margin: 2rem 0;
+	padding: 3rem;
+	background-color: transparent;
+	border: 1px solid #909eaa;
+	border-radius: 15px;
+	overflow: hidden;
+	transition: 0.4s ease;
+}
+
+.faq__item--active {
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq__item--active::before,
+.faq__item--active::after {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	content: '\f075';
+	font-family: 'Font Awesome 5 Free';
+	font-size: 10rem;
+	color: #25b360;
+	opacity: 0.2;
+	z-index: 0;
+}
+
+.faq__item--active::before {
+	top: -10px;
+	left: -20px;
+	color: #2557b3;
+	transform: rotateY(180deg);
+}
+
+.faq__title {
+	margin: 0 4rem 0 0;
+	font-size: 2.5rem;
+}
+
+.faq__text {
+	display: none;
+	margin: 4rem 0 0;
+	font-size: 1.8rem;
+}
+
+.faq__item--active .faq__text {
+	display: block;
+}
+
+.faq__buttons {
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	height: 30px;
+	width: 30px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	background-color: transparent;
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.faq__buttons:focus {
+	outline: 0;
+}
+
+.faq__buttons .fa-times {
+	display: none;
+}
+
+.faq__item--active .faq__buttons .fa-times {
+	display: block;
+	color: #fff;
+}
+
+.faq__buttons .fa-chevron-down {
+	display: block;
+}
+
+.faq__item--active .faq__buttons .fa-chevron-down {
+	display: none;
+}
+
+.faq__item--active .faq__buttons {
+	background-color: #9fa4a8;
+}
