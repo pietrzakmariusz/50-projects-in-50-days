@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
+	background-color: #cdf6ff;
+	background-image: linear-gradient(
+		to bottom,
+		#cdf6ff 0%,
+		#cdf6ff 50%,
+		#3d81f8 50%,
+		#3d81f8 100%
+	);
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10rem;
+	padding: 3rem;
+	border-radius: 5px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+	background-color: #fff;
+	transition: width 0.5s linear;
+	overflow-x: hidden;
+}
+
+.nav--active {
+	width: 40rem;
+}
+
+.nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	width: 0;
+	list-style-type: none;
+	transition: width 0.5s linear;
+}
+
+.nav--active ul {
+	width: 100%;
+}
+
+.nav ul li {
+	opacity: 0;
+	transform: rotateY(0deg);
+	transition: transform 0.5s linear, opacity 0.5s linear;
+}
+
+.nav--active ul li {
+	opacity: 1;
+	transform: rotateY(360deg);
+}
+
+.nav ul a {
+	position: relative;
+	margin: 0 1rem;
+	color: #000;
+	text-decoration: none;
+	pointer-events: none;
+}
+
+.nav--active ul a {
+	pointer-events: initial;
+}
+
+.icon {
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	background-color: #fff;
+	border: 0;
+	cursor: pointer;
+}
+
+.icon:focus {
+	outline: 0;
+}
+
+.icon .line {
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	width: 20px;
+	height: 2px;
+	background-color: #3d81f8;
+	transition: transform 0.5s linear;
+}
+
+.icon .line2 {
+	top: auto;
+	bottom: 10px;
+}
+
+.nav--active .icon .line1 {
+	transform: rotate(-765deg) translateY(5.5px);
+}
+
+.nav--active .icon .line2 {
+	transform: rotate(765deg) translateY(-5.5px);
+}
