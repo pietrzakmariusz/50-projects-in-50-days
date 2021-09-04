@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+	--color-primary: #000;
+	--color-secondary: #fff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	transition: all 0.3s ease-in;
+}
+
+.html--dark {
+	--color-primary: #fff;
+	--color-secondary: #444;
+	background-color: #111;
+	color: var(--color-primary);
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Fira Code', sans-serif;
+	font-size: 1.4rem;
+	overflow: hidden;
+}
+
+.toggle-theme-btn {
+	position: absolute;
+	top: 100px;
+	padding: 0.8em 1.6em;
+	font-family: inherit;
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--color-secondary);
+	background-color: var(--color-primary);
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.toggle-theme:focus {
+	outline: none;
+}
+
+.clock {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.clock-container {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+.needle {
+	background-color: var(--color-primary);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 80px;
+	width: 3px;
+	transform-origin: bottom center;
+	transition: all 0.5s ease-in;
+}
+
+.needle__hour {
+	transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle__minute {
+	transform: translate(-50%, -100%) rotate(0deg);
+	height: 120px;
+}
+
+.needle__second {
+	transform: translate(-50%, -100%) rotate(0deg);
+	height: 130px;
+	background-color: #e23926;
+}
+
+.center-point {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 16px;
+	height: 16px;
+	background-color: #e23926;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.center-point::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	background-color: var(--color-primary);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.time {
+	font-size: 8rem;
+	margin-bottom: 50px;
+}
+
+.date {
+	color: #aaa;
+	font-size: 3rem;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+}
+
+.date--day {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+	height: 5rem;
+	font-size: 3rem;
+	color: var(--color-secondary);
+	background-color: var(--color-primary);
+	border-radius: 50%;
+	transition: all 0.5s ease-in;
+}
